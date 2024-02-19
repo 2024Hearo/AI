@@ -11,7 +11,7 @@ import os
 import tempfile
 
 # Firebase Admin SDK를 위한 서비스 계정 키 파일 경로
-firebase_key_path = "C:/Users/82102/Desktop/성신/2024-1/솔챌/AI/serviceAccountKey.json"
+firebase_key_path = "C:\\Users\\82102\\Documents\\GitHub\\AI\\serviceAccountKey.json"
 
 # Firebase Admin SDK 초기화
 firebase_cred = admin_credentials.Certificate(firebase_key_path)
@@ -32,7 +32,7 @@ file_path = "sound/sound2.mp3"
 blob = bucket.blob(file_path)
 
 # 로컬 시스템에 파일 다운로드할 경로와 파일명
-destination_file_name = 'C:\\Users\\82102\\Desktop\\성신\\2024-1\\솔챌\\AI\\sound1.mp3'
+destination_file_name = 'C:\\Users\\82102\\Documents\\GitHub\\AI\\sound2.mp3'
 blob.download_to_filename(destination_file_name)
 
 # 수정된 부분: 'audio_path' 대신 'destination_file_name'을 사용
