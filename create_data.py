@@ -3,8 +3,7 @@ import mediapipe as mp
 import numpy as np
 import time, os
 
-actions = ['Hello', 'Thank you', 'I have a headache and cold']
-seq_length = 30
+actions = ['Hello', 'Thank you', 'Tell me', 'cat', 'I', 'cold', 'and', 'headache']
 secs_for_action = 30
 
 # MediaPipe hands model
