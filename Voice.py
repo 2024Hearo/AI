@@ -3,6 +3,8 @@ import librosa.display
 import matplotlib.pyplot as plt
 import numpy as np
 import firebase_admin
+import io
+from google.cloud import storage
 from firebase_admin import credentials as admin_credentials  # Firebase용 credentials로 명칭 변경
 from firebase_admin import firestore
 from google.cloud import storage
@@ -11,7 +13,7 @@ import os
 import tempfile
 
 # Firebase Admin SDK를 위한 서비스 계정 키 파일 경로
-firebase_key_path = "C:\\Users\\82102\\Documents\\GitHub\\AI\\serviceAccountKey.json"
+firebase_key_path = "serviceAccountKey.json"
 
 # Firebase Admin SDK 초기화
 firebase_cred = admin_credentials.Certificate(firebase_key_path)
@@ -24,20 +26,20 @@ gcs_credentials = service_account.Credentials.from_service_account_file(firebase
 storage_client = storage.Client(credentials=gcs_credentials, project=gcs_credentials.project_id)
 
 # Firebase Storage에서 사용하는 버킷 이름
-bucket_name = 'hearo-2024'
+bucket_name = 'hearos-414916.appspot.com'
 bucket = storage_client.bucket(bucket_name)
 
 # 파일 경로 설정
-file_path = "sound/sound2.mp3"
+file_path = "sound/help.mp3"
 blob = bucket.blob(file_path)
+blob.download_to_file(io.BytesIO())
 
-# 로컬 시스템에 파일 다운로드할 경로와 파일명
-destination_file_name = 'C:\\Users\\82102\\Documents\\GitHub\\AI\\sound2.mp3'
-blob.download_to_filename(destination_file_name)
 
-# 수정된 부분: 'audio_path' 대신 'destination_file_name'을 사용
-y, sr = librosa.load(destination_file_name, sr=None)
-
+# 수정된 부분: 파일 바이트 스트림을 직접 librosa.load에 전달
+file_stream = io.BytesIO()
+blob.download_to_file(file_stream)
+file_stream.seek(0)  # 스트림의 시작으로 포인터를 이동
+y, sr = librosa.load(file_stream, sr=None)
 
 mfccs = librosa.feature.mfcc(y=y, sr=sr)
 

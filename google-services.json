@@ -13,7 +13,36 @@
           "package_name": "com.hearos.hearo"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "406402784594-0gr7jn9omt9quit6jpjnajd9ddac4n4e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hearos.hearo",
+            "certificate_hash": "6aaeb5dd74db8373e6cb4042b51b7c26150989a0"
+          }
+        },
+        {
+          "client_id": "406402784594-ouvr2ibt1313p0dnbin1ci2av4lmgv6h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hearos.hearo",
+            "certificate_hash": "334d23fc9fdf10b407abe02e47f6b2f3796406c9"
+          }
+        },
+        {
+          "client_id": "406402784594-v2m8d8jmcr31rbe7153ccoa28elst7jv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.hearos.hearo",
+            "certificate_hash": "81ab728d3a59f28a5a7b780e6cc41e085f1f2e53"
+          }
+        },
+        {
+          "client_id": "406402784594-fp7uoq2oi2s3ub1tkjsmahg57pn6pnvq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAQUMeYK66pIXuAZcxlpeACFx_oMwQCMoY"
@@ -21,7 +50,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406402784594-fp7uoq2oi2s3ub1tkjsmahg57pn6pnvq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
