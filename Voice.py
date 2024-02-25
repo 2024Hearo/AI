@@ -30,7 +30,7 @@ bucket_name = 'hearos-414916.appspot.com'
 bucket = storage_client.bucket(bucket_name)
 
 # 파일 경로 설정
-file_path = "sound/help.mp3"
+file_path = "voice/voice.mp3"
 blob = bucket.blob(file_path)
 blob.download_to_file(io.BytesIO())
 
